@@ -35,3 +35,5 @@ This project demonstrates basic Git and GitHub workflows and open-source project
 This project is licensed under the Apache License 2.0.
 
 Temporary typo for merge demonstration.
+
+This change demonstrates the first merge.
