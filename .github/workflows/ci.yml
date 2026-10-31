@@ -1,0 +1,29 @@
+﻿name: CI Workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Validate Simple Interest Project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify README
+        run: test -f README.md && echo "README found successfully"
+
+      - name: Verify Simple Interest Script
+        run: test -f simple-interest.sh && echo "Script found successfully"
+
+      - name: Validate Bash Syntax
+        run: bash -n simple-interest.sh
+
+      - name: Complete CI Workflow
+        run: echo "All CI validation steps completed successfully"
